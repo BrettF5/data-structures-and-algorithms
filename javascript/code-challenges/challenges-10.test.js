@@ -27,11 +27,11 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
 
-    const flattenedArray = matrix.flat();
+  const flattenedArray = matrix.flat();
+  const maxNumber = Math.max(...flattenedArray);
 
-    const maxNumber = Math.max(...flattenedArray);
+  return maxNumber; 
 
-    return maxNumber; 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,15 +79,16 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
 
-    const totalSalesPerHour = Array.from({ length: hoursOpen.length }, () => 0);
+  const totalSalesPerHour = Array.from({ length: hoursOpen.length }, () => 0);
 
-    for (const store of stores) {
-      for (let i = 0; i < hoursOpen.length; i++) {
-        totalSalesPerHour[i] += store[i];
-      }
+  for (const store of stores) {
+    for (let i = 0; i < hoursOpen.length; i++) {
+      totalSalesPerHour[i] += store[i];
     }
-  
-    return totalSalesPerHour;
+  }
+
+  return totalSalesPerHour;
+
 
 };
 
@@ -102,24 +103,9 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  const result = [];
 
-  // Iterate over each hour using forEach
-  hours.forEach((hour, index) => {
-    // Calculate the total sales for the current hour using reduce
-    const totalSales = data.reduce((total, store) => total + store[index], 0);
+  // Solution code here...
 
-    // Create an object with sales and time properties
-    const salesObject = {
-      sales: `${totalSales} cookies`,
-      time: hour,
-    };
-
-    // Push the object to the result array
-    result.push(salesObject);
-  });
-
-  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -144,21 +130,22 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-    // Find the object representing the 'Pet store'
-    const petStore = arr.find(store => store.store === 'Pet store');
 
-    // Check if the 'Pet store' is found and has the 'Treats' item
-    if (petStore && petStore.items) {
-      const treatsItem = petStore.items.find(item => item.name === 'Treats');
-  
-      // Check if the 'Treats' item is found and return its quantity
-      if (treatsItem) {
-        return treatsItem.quantity;
+      // Find the object representing the 'Pet store'
+      const petStore = arr.find(store => store.store === 'Pet store');
+
+      // Check if the 'Pet store' is found and has the 'Treats' item
+      if (petStore && petStore.items) {
+        const treatsItem = petStore.items.find(item => item.name === 'Treats');
+    
+        // Check if the 'Treats' item is found and return its quantity
+        if (treatsItem) {
+          return treatsItem.quantity;
+        }
       }
-    }
-  
-    // Return 0 if 'Pet store' or 'Treats' item is not found
-    return 0;
+    
+      // Return 0 if 'Pet store' or 'Treats' item is not found
+      return 0;
 };
 
 /* ------------------------------------------------------------------------------------------------
