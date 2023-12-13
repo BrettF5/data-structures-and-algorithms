@@ -26,10 +26,12 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
+
   const flattenedArray = matrix.flat();
   const maxNumber = Math.max(...flattenedArray);
 
   return maxNumber; 
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,6 +78,7 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
+
   const totalSalesPerHour = Array.from({ length: hoursOpen.length }, () => 0);
 
   for (const store of stores) {
@@ -85,6 +88,7 @@ const grandTotal = (stores) => {
   }
 
   return totalSalesPerHour;
+
 
 };
 
@@ -99,7 +103,9 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
+
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,6 +130,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
+
       // Find the object representing the 'Pet store'
       const petStore = arr.find(store => store.store === 'Pet store');
 
